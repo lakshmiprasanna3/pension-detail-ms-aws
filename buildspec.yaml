@@ -7,9 +7,10 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-    - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
-    - IMAGE_URI=${REPOSITORY_URI}:${TAG}
+    - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 860061945305.dkr.ecr.ap-northeast-2.amazonaws.com
+    - IMAGE_NAME=pension-detail-microservice-klp
+    - IMAGE_URI=860061945305.dkr.ecr.ap-northeast-2.amazonaws.com/pension-detail-microservice-klp:latest
+    - CONTAINER_NAME=authorization-microservice-klp
   build:
     commands:
     - echo Build started on `date`

@@ -10,7 +10,7 @@ phases:
     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 860061945305.dkr.ecr.ap-northeast-2.amazonaws.com
     - IMAGE_NAME=pension-detail-microservice-klp
     - IMAGE_URI=860061945305.dkr.ecr.ap-northeast-2.amazonaws.com/pension-detail-microservice-klp:latest
-    - CONTAINER_NAME=authorization-microservice-klp
+    - CONTAINER_NAME=pension-detail-c
   build:
     commands:
     - echo Build started on `date`
